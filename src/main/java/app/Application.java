@@ -1,6 +1,6 @@
 package app;
 
-import app.book.*;
+import app.produto.*;
 import app.index.*;
 import app.login.*;
 import app.user.*;
@@ -11,17 +11,17 @@ import static spark.debug.DebugScreen.*;
 public class Application {
 
     // Declare dependencies
-    public static BookDao bookDao;
+    public static ProdutoDao produtoDao;
     public static UserDao userDao;
 
     public static void main(String[] args) {
 
         // Instantiate your dependencies
-        bookDao = new BookDao();
+        produtoDao = new ProdutoDao();
         userDao = new UserDao();
 
         // Configure Spark
-        port(4567);
+        port(8080);
         staticFiles.location("/public");
         staticFiles.expireTime(600L);
         enableDebugScreen();
@@ -32,8 +32,8 @@ public class Application {
 
         // Set up routes
         get(Path.Web.INDEX,          IndexController.serveIndexPage);
-        get(Path.Web.BOOKS,          BookController.fetchAllBooks);
-        get(Path.Web.ONE_BOOK,       BookController.fetchOneBook);
+        get(Path.Web.BOOKS,          ProdutoController.fetchAllBooks);
+        get(Path.Web.ONE_BOOK,       ProdutoController.fetchOneBook);
         get(Path.Web.LOGIN,          LoginController.serveLoginPage);
         post(Path.Web.LOGIN,         LoginController.handleLoginPost);
         post(Path.Web.LOGOUT,        LoginController.handleLogoutPost);

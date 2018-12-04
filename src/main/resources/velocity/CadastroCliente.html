@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> 
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="../../../../../testerino/src/main/resources/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../../testerino/src/main/resources/public/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="../../../../../testerino/src/main/resources/public/js/bootstrap.min.js"></script>
+    <script src="../../../../../testerino/src/main/resources/public/js/jquery.mask.min.js"></script>
+</head>
+<body>
+   <div class="main">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index/index.html">TISafeVendas</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoria</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="produto/ListaProdFut.html">Futebol</a>
+                    <a class="dropdown-item" href="produto/ListaProdBas.html">Basquete</a>
+                    <a class="dropdown-item" href="produto/ListaProdVol.html">Volei</a>
+                    <a class="dropdown-item" href="produto/ListaProdTen.html">Tenis</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="produto/CadastroProduto.html">Adicionar produto</a>
+            </li>
+        </ul>	
+    <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right: 5px;">Search</button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+    <a href="Carrinho.html" class="btn btn-success" role="button" style="margin-right: 5px;"><span><i class="fas fa-cart-plus"></i></span></a>
+    <button class="btn btn-primary	my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
+    </div>
+</nav>
+	<div class="container form_container">
+       <h3 class="text-center">Cadastro de Cliente</h3>
+        <form>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">Nome</label>
+      <input type="text" class="form-control" id="validationDefault01" placeholder="Nome" pattern="[a-zA-Z]{0,50}" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Sobrenome</label>
+      <input type="text" class="form-control" id="validationDefault02" placeholder="Sobrenome" pattern="[A-Za-z]{0,50}" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">Nome de Usuário</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+        </div>
+        <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Nome de Usuário" aria-describedby="inputGroupPrepend2" pattern="[A-Za-z0-9_]{0,10}" required>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+	<div class="col-md-3 mb-3">
+      <label for="validationDefault03">CEP</label>
+      <input type="text" class="form-control" id="validationDefault03" placeholder="CEP" pattern="[0-9-]{0,10}" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault04">Cidade</label>
+      <input type="text" class="form-control" id="validationDefault04" placeholder="Cidade" pattern="[A-Za-z]{0,20}" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault05">Estado</label>
+      <input type="text" class="form-control" id="validationDefault05" placeholder="Estado" pattern="[A-Za-z]{2}" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault06">CPF</label>
+      <input type="text" class="form-control" id="validationDefault06" placeholder="CPF" pattern="[0-9\.-]{11,15}" required>
+    </div>
+  </div>
+  
+  <div class="form-row">
+	<div class="col-md-6 mb-3">
+		<label for="validationDefault07">Senha</label>
+		<input type="password" class="form-control" id="validationDefault07" placeholder="Senha" required>
+	</div>
+	<div class="col-md-6 mb-3">
+		<label for="validationDefault08">Confirmação de Senha</label>
+		<input type="password" class="form-control" id="validationDefault08" placeholder="Confirmação de Senha" required>
+	</div>
+  </div>
+  
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="form-check-label" for="invalidCheck2">Concordo com os termos e condições</label>
+    </div>
+  </div>
+  <button class="btn btn-success" type="submit">Cadastrar</button>
+  <button class="btn btn-danger" type="submit">Voltar</button>
+</form>
+    </div>
+<footer>
+  <div class="container">
+    <p>Este site se encontra sob desenvolvimento pela TISafe, Papi Studio e Dandan Solutions.</p>
+    <p>Caso queira entrar em contato com algum de nos, pode nos encontrar nas seguintes plataformas: [Inserir plataformas aqui]</p>
+  </div>
+</footer>   
+   </div>
+<!-- Inicio do Login modal-->
+<div class="modal" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin">
+                    <div class="form-label-group">
+                        <label for="inputEmail">Email address</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="CadastroCliente.html">Adicionar cliente</a>
+                    </li>
+                    <p class="mt-5 mb-3 text-muted text-center">© 2018-2019</p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- fim do login modal-->
+<script>
+    $(document).ready(function(){
+        $('#validationDefault03').mask("00000-000");
+        $("#validationDefault06").mask('000.000.000-20');
+    })
+</script>
+</body>
+</html>

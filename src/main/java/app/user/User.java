@@ -4,7 +4,7 @@ import lombok.*;
 
 @Value // All fields are private and final. Getters (but not setters) are generated (https://projectlombok.org/features/Value.html)
 public class User {
+    Long id;
     String username;
-    String salt;
-    String hashedPassword;
+    String pass;
 }

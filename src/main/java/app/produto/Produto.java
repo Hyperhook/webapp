@@ -1,9 +1,9 @@
-package app.book;
+package app.produto;
 
 import lombok.*;
 
 @Value // All fields are private and final. Getters (but not setters) are generated (https://projectlombok.org/features/Value.html)
-public class Book {
+public class Produto {
     String title;
     String author;
     String isbn;
