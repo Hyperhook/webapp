@@ -34,9 +34,12 @@ public class Application {
         get(Path.Web.INDEX,          IndexController.serveIndexPage);
         get(Path.Web.BOOKS,          ProdutoController.fetchAllBooks);
         get(Path.Web.ONE_BOOK,       ProdutoController.fetchOneBook);
+        get(Path.Web.CADASTROPROD,   ProdutoController.CadastroProd);
         get(Path.Web.LOGIN,          LoginController.serveLoginPage);
         post(Path.Web.LOGIN,         LoginController.handleLoginPost);
         post(Path.Web.LOGOUT,        LoginController.handleLogoutPost);
+
+
         get("*",                     ViewUtil.notFound);
 
         //Set up after-filters (called after each get/post)

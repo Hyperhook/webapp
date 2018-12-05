@@ -36,4 +36,34 @@ public class ProdutoController {
         }
         return ViewUtil.notAcceptable.handle(request, response);
     };
+    public static Route CadastroProd = (Request request, Response response) -> {
+        LoginController.ensureUserIsLoggedIn(request, response);
+        if (clientAcceptsHtml(request)) {
+            HashMap<String, Object> model = new HashMap<>();
+
+            Produto produto = produtoDao.getBookByIsbn(getParamIsbn(request));
+
+            model.put("cadproduto", produto);
+            return ViewUtil.render(request, model, Path.Template.CADASTROPROD);
+        }
+        if (clientAcceptsJson(request)) {
+
+        }
+        return ViewUtil.notAcceptable.handle(request, response);
+    };
+    public static Route ProdBas = (Request request, Response response) -> {
+        LoginController.ensureUserIsLoggedIn(request, response);
+        if (clientAcceptsHtml(request)) {
+            HashMap<String, Object> model = new HashMap<>();
+
+            Produto produto = produtoDao.getBookByIsbn(getParamIsbn(request));
+
+            model.put("produtobas", produto);
+            return ViewUtil.render(request, model, Path.Template.LISTAPRODBAS);
+        }
+        if (clientAcceptsJson(request)) {
+
+        }
+        return ViewUtil.notAcceptable.handle(request, response);
+    };
 }
