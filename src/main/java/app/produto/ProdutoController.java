@@ -10,17 +10,26 @@ import static app.util.RequestUtil.*;
 
 public class ProdutoController {
 
-    public static Route fetchAllBooks = (Request request, Response response) -> {
+    public static Route fetchAll = (Request request, Response response) -> {
         LoginController.ensureUserIsLoggedIn(request, response);
         if (clientAcceptsHtml(request)) {
             HashMap<String, Object> model = new HashMap<>();
-            model.put("books", produtoDao.getAllBooks());
+            model.put("produtos", produtoDao.getAllBooks());
             return ViewUtil.render(request, model, Path.Template.BOOKS_ALL);
         }
         if (clientAcceptsJson(request)) {
             return dataToJson(produtoDao.getAllBooks());
         }
         return ViewUtil.notAcceptable.handle(request, response);
+    };
+
+    public static Route carrinho = (Request req, Response res) -> {
+//        LoginController.ensureUserIsLoggedIn(req, res);
+//        if (clientAcceptsHtml(req)){
+//            HashMap<String, Object> model = new HashMap<>();
+//            model.put("items", produtoDao.getAllBooks());
+//        }
+        return ViewUtil.render(req, new HashMap<>(), Path.Template.CARRINHO);
     };
 
     public static Route fetchOneBook = (Request request, Response response) -> {
@@ -37,7 +46,6 @@ public class ProdutoController {
         return ViewUtil.notAcceptable.handle(request, response);
     };
     public static Route CadastroProd = (Request request, Response response) -> {
-        LoginController.ensureUserIsLoggedIn(request, response);
         if (clientAcceptsHtml(request)) {
             HashMap<String, Object> model = new HashMap<>();
 
@@ -52,7 +60,6 @@ public class ProdutoController {
         return ViewUtil.notAcceptable.handle(request, response);
     };
     public static Route ProdBas = (Request request, Response response) -> {
-        LoginController.ensureUserIsLoggedIn(request, response);
         if (clientAcceptsHtml(request)) {
             HashMap<String, Object> model = new HashMap<>();
 

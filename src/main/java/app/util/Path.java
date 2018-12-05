@@ -28,11 +28,11 @@ public class Path {
         public static final String BOOKS_ONE = "/velocity/produto/one.vm";
         public static final String NOT_FOUND = "/velocity/notFound.vm";
         public static final String CADASTROPROD = "/velocity/produto/CadastroProduto";
-        public static final String LISTAPRODBAS = "/velocity/produto/ListaProdBas/";
+        public static final String LISTAPRODBAS = "/velocity/produto/ListaProdBas.html";
         public static final String LISTAPRODFUT = "/velocity/produto/ListaProdFut/";
         public static final String LISTAPRODTEN = "/velocity/produto/ListaProdTen/";
         public static final String LISTAPRODVOL = "/velocity/produto/ListaProdVol/";
-        public static final String CARRINHO = "/velocity/carrinho/";
+        public static final String CARRINHO = "/velocity/Carrinho.html";
         public static final String CADASTROCLIENTE = "/velocity/cadcliente/";
 
     }

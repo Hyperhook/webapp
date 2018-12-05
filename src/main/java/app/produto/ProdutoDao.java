@@ -1,6 +1,8 @@
 package app.produto;
 
 import com.google.common.collect.*;
+
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class ProdutoDao {
@@ -19,6 +21,8 @@ public class ProdutoDao {
             new Produto("The adventures of Huckleberry Finn", "Mark Twain", "9781591940296"),
             new Produto("Alice In Wonderland", "Lewis Carrol", "9780439291491")
     );
+
+    public List<Produto> carrinho = new ArrayList<>();
 
     public Iterable<Produto> getAllBooks() {
         return produtos;
